@@ -20,3 +20,5 @@ app.get('/index', function(req, res) {
 var server = http.createServer(app).listen(process.env.PORT, function() {
     logger.info('The trailer viewer is running on port ' + process.env.PORT);
 });
+
+exports = module.exports = app;

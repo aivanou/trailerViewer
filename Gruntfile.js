@@ -7,7 +7,7 @@ module.exports = function(grunt) {
                     quiet: false,
                     clearRequireCache: false
                 },
-                src: ['test/*.js']
+                src: ['src/server/*/tests/*.js']
             }
         },
         express: {
@@ -60,5 +60,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['jshint']);
 
-    grunt.registerTask('server', ['express:dev', 'jshint', 'watch']);
+    grunt.registerTask('server', ['jshint', 'mochaTest', 'express:dev', 'watch']);
 };

@@ -72,7 +72,7 @@ function fetchTrailer(params) {
         .then(function(taResp) {
             logger.debug('Processing Trailer Addict Frame response');
             parser.parseString(taResp.body, function(err, result) {
-                var frame = result.trailers.trailer[0].embed[0];
+                var frame = getFrame(result);
                 deferred.resolve({
                     imdb: params.imdb,
                     metadata: params.metadata,
@@ -82,6 +82,7 @@ function fetchTrailer(params) {
             });
         })
         .fail(function(fail) {
+            logger.error('Error: ' + fail);
             deferred.reject(fail);
         });
     return deferred.promise;
@@ -107,6 +108,14 @@ Fetcher.prototype = {
             .then(fetchTrailer);
     }
 };
+
+function getFrame(data) {
+    var trailers = data.trailers;
+    if (trailers === undefined || trailers.trailer === undefined || trailers.trailer.length === 0) {
+        return undefined;
+    }
+    return trailers.trailer[0].embed[0];
+}
 
 function buildURL(str, imdb, token) {
     var obj = url.parse(str);

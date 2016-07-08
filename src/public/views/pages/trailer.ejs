@@ -1,30 +1,33 @@
 <!-- views/pages/index.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <% include ../partials/head %>
-</head>
-<body class="container">
-
-    <header>
-        <% include ../partials/header %>
-    </header>
-
-    <main>
+    <head>
+        <% include ../partials/head %>
+    </head>
+    <body class="container">
+        <header>
+            <% include ../partials/header %>
+        </header>
+        <main>
         <div class="jumbotron">
-            <h1>This is great</h1>
-            <p>Title:  </p><p><%= data.metadata.title %></p>
-            <p>Description:  </p><p><%= data.metadata.description %></p>
-            <p><%= data.imdb.id %></p>
-            <div><%- data.trailerFrame %></div>
-            
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                    <% if(data.trailerFrame===undefined) { %>
+                    <p>No trailer</p>
+                    <% } else {%>
+                    <div><%- data.trailerFrame %></div>
+                    <%}%>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <p>Title:  </p><p><%= data.metadata.title %></p>
+                    <p>Description:  </p><p><%= data.metadata.description %></p>
+                </div>
+            </div>
         </div>
-    </main>
-
-    <footer>
-        <% include ../partials/footer %>
-    </footer>
-    
-</body>
+        </main>
+        <footer>
+            <% include ../partials/footer %>
+        </footer>
+        
+    </body>
 </html>
