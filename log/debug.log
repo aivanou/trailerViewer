@@ -1,0 +1,56 @@
+{"level":"info","message":"The trailer viewer is running on port 3001","timestamp":"2016-07-08T15:18:01.116Z"}
+{"level":"debug","message":"Processing request with parameter: titanic-1997","timestamp":"2016-07-08T15:18:05.682Z"}
+{"level":"debug","message":"Cache miss, fetching data for : titanic-1997","timestamp":"2016-07-08T15:18:05.692Z"}
+{"level":"debug","message":"Fetcher: GET: https://content.viaplay.se/pc-se/film/titanic-1997","timestamp":"2016-07-08T15:18:05.693Z"}
+{"level":"info","message":" GET https://content.viaplay.se/pc-se/film/titanic-1997 200(423ms)","timestamp":"2016-07-08T15:18:06.116Z"}
+{"level":"debug","message":"Processing VIA Content response","timestamp":"2016-07-08T15:18:06.117Z"}
+{"level":"debug","message":"Fetcher: GET: http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb","timestamp":"2016-07-08T15:18:06.119Z"}
+{"level":"info","message":" GET http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb 200(379ms)","timestamp":"2016-07-08T15:18:06.501Z"}
+{"level":"debug","message":"Processing Trailer Addict Frame response","timestamp":"2016-07-08T15:18:06.501Z"}
+{"level":"debug","message":"Got response for rendering page for: titanic-1997","timestamp":"2016-07-08T15:18:06.511Z"}
+{"level":"debug","message":"Processing request with parameter: titanic-1997","timestamp":"2016-07-08T15:18:08.624Z"}
+{"level":"debug","message":"Cache miss, fetching data for : titanic-1997","timestamp":"2016-07-08T15:18:08.625Z"}
+{"level":"debug","message":"Fetcher: GET: https://content.viaplay.se/pc-se/film/titanic-1997","timestamp":"2016-07-08T15:18:08.625Z"}
+{"level":"info","message":" GET https://content.viaplay.se/pc-se/film/titanic-1997 200(292ms)","timestamp":"2016-07-08T15:18:08.917Z"}
+{"level":"debug","message":"Processing VIA Content response","timestamp":"2016-07-08T15:18:08.917Z"}
+{"level":"debug","message":"Fetcher: GET: http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb","timestamp":"2016-07-08T15:18:08.919Z"}
+{"level":"info","message":" GET http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb 200(381ms)","timestamp":"2016-07-08T15:18:09.301Z"}
+{"level":"debug","message":"Processing Trailer Addict Frame response","timestamp":"2016-07-08T15:18:09.301Z"}
+{"level":"debug","message":"Got response for rendering page for: titanic-1997","timestamp":"2016-07-08T15:18:09.306Z"}
+{"level":"info","message":"The trailer viewer is running on port 3001","timestamp":"2016-07-08T15:18:54.327Z"}
+{"level":"info","message":"The trailer viewer is running on port 3001","timestamp":"2016-07-08T15:19:58.734Z"}
+{"level":"debug","message":"Processing request with parameter: titanic-1997","timestamp":"2016-07-08T15:20:01.134Z"}
+{"level":"debug","message":"Cache miss, fetching data for : titanic-1997","timestamp":"2016-07-08T15:20:01.137Z"}
+{"level":"debug","message":"Fetcher: GET: https://content.viaplay.se/pc-se/film/titanic-1997","timestamp":"2016-07-08T15:20:01.138Z"}
+{"level":"info","message":" GET https://content.viaplay.se/pc-se/film/titanic-1997 200(329ms)","timestamp":"2016-07-08T15:20:01.468Z"}
+{"level":"debug","message":"Processing VIA Content response","timestamp":"2016-07-08T15:20:01.468Z"}
+{"level":"debug","message":"Fetcher: GET: http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb","timestamp":"2016-07-08T15:20:01.470Z"}
+{"level":"info","message":" GET http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb 200(368ms)","timestamp":"2016-07-08T15:20:01.838Z"}
+{"level":"debug","message":"Processing Trailer Addict Frame response","timestamp":"2016-07-08T15:20:01.839Z"}
+{"level":"debug","message":"Got response for rendering page for: titanic-1997","timestamp":"2016-07-08T15:20:01.853Z"}
+{"level":"debug","message":"CACHE: inserting into cache: titanic-1997  [object Object]","timestamp":"2016-07-08T15:20:01.879Z"}
+{"level":"info","message":"The trailer viewer is running on port 3001","timestamp":"2016-07-08T15:20:17.311Z"}
+{"level":"info","message":" GET https://content.viaplay.se/pc-se/film/titanic-1997 200(336ms)","timestamp":"2016-07-08T15:20:19.009Z"}
+{"level":"info","message":" GET http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb 200(377ms)","timestamp":"2016-07-08T15:20:19.390Z"}
+{"level":"info","message":"The trailer viewer is running on port 3001","timestamp":"2016-07-08T15:20:31.185Z"}
+{"level":"debug","message":"Processing request with parameter: titanic-1997","timestamp":"2016-07-08T15:20:33.934Z"}
+{"level":"debug","message":"Cache miss, fetching data for : titanic-1997","timestamp":"2016-07-08T15:20:33.940Z"}
+{"level":"debug","message":"Fetcher: GET: https://content.viaplay.se/pc-se/film/titanic-1997","timestamp":"2016-07-08T15:20:33.941Z"}
+{"level":"info","message":" GET https://content.viaplay.se/pc-se/film/titanic-1997 200(487ms)","timestamp":"2016-07-08T15:20:34.428Z"}
+{"level":"debug","message":"Processing VIA Content response","timestamp":"2016-07-08T15:20:34.429Z"}
+{"level":"debug","message":"Fetcher: GET: http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb","timestamp":"2016-07-08T15:20:34.430Z"}
+{"level":"info","message":" GET http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb 200(384ms)","timestamp":"2016-07-08T15:20:34.816Z"}
+{"level":"debug","message":"Processing Trailer Addict Frame response","timestamp":"2016-07-08T15:20:34.816Z"}
+{"level":"debug","message":"Got response for rendering page for: titanic-1997","timestamp":"2016-07-08T15:20:34.826Z"}
+{"level":"debug","message":"CACHE: inserting into cache: titanic-1997  [object Object]","timestamp":"2016-07-08T15:20:34.850Z"}
+{"level":"debug","message":"Processing request with parameter: titanic-1997","timestamp":"2016-07-08T15:20:38.130Z"}
+{"level":"debug","message":"CACHE: checking: titanic-1997, time in cache: 3  1000","timestamp":"2016-07-08T15:20:38.131Z"}
+{"level":"debug","message":"Cache miss, fetching data for : titanic-1997","timestamp":"2016-07-08T15:20:38.131Z"}
+{"level":"debug","message":"Fetcher: GET: https://content.viaplay.se/pc-se/film/titanic-1997","timestamp":"2016-07-08T15:20:38.132Z"}
+{"level":"info","message":" GET https://content.viaplay.se/pc-se/film/titanic-1997 200(341ms)","timestamp":"2016-07-08T15:20:38.473Z"}
+{"level":"debug","message":"Processing VIA Content response","timestamp":"2016-07-08T15:20:38.474Z"}
+{"level":"debug","message":"Fetcher: GET: http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb","timestamp":"2016-07-08T15:20:38.475Z"}
+{"level":"info","message":" GET http://api.traileraddict.com/?count=1&imdb=0120338&k=viapfmpb 200(367ms)","timestamp":"2016-07-08T15:20:38.843Z"}
+{"level":"debug","message":"Processing Trailer Addict Frame response","timestamp":"2016-07-08T15:20:38.843Z"}
+{"level":"debug","message":"Got response for rendering page for: titanic-1997","timestamp":"2016-07-08T15:20:38.851Z"}
+{"level":"debug","message":"CACHE: inserting into cache: titanic-1997  [object Object]","timestamp":"2016-07-08T15:20:38.864Z"}

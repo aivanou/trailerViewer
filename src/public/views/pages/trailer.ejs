@@ -1,0 +1,30 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>This is great</h1>
+            <p>Title:  </p><p><%= data.metadata.title %></p>
+            <p>Description:  </p><p><%= data.metadata.description %></p>
+            <p><%= data.imdb.id %></p>
+            <div><%- data.trailerFrame %></div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

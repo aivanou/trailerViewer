@@ -1,0 +1,17 @@
+{
+    "cache": {
+        "size": 1000,
+        "timeout": 1000
+    },
+    "logger": {
+        "level": "debug",
+        "file": "log/debug.log"
+    },
+    "via": {
+        "url": "https://content.viaplay.se/pc-se/film/"
+    },
+    "trailerAddict": {
+        "token": "viapfmpb",
+        "url": "http://api.traileraddict.com/?count=1"
+    }
+}
