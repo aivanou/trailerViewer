@@ -9,11 +9,11 @@ grunt server
 
 Tools used:
 
-node.js
-express
-ejs -- template framework for processing data on front layer
-Grunt 
-Promise/q library 
+1. node.js
+2. express
+3. ejs -- template framework for processing data on front layer
+4. Grunt 
+5. Promise/q library 
 Winston
 Mocha/chai/supertest
 
