@@ -33,7 +33,7 @@ api.get('/:filmId', function(req, res) {
                 })
                 .fail(function(fail) {
                     logger.error('Error: ' + fail);
-                    res.status(500).send('Failed');
+                    res.status(500).send('No such movie');
                 });
         });
 });

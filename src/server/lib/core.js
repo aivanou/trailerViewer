@@ -1,10 +1,10 @@
 'use strict';
 
-var logger = require('../common/logger');
-var url = require('url');
-var request = require('request');
-var $q = require('q');
-var xml2js = require('xml2js');
+var logger = require('../common/logger'),
+    url = require('url'),
+    request = require('request'),
+    $q = require('q'),
+    xml2js = require('xml2js');
 
 var parser = new xml2js.Parser();
 
@@ -38,27 +38,24 @@ function post(url, opts) {
     return sendHTTPRequest(url, opts, 'POST');
 }
 
-function sendHTTPRequest(url, opts, method) {
+function sendHTTPRequest(url, reqOpts, method) {
     var deferred = $q.defer();
-    if (!opts) {
-        opts = {
-            TIMEOUT: 100
+    if (!reqOpts) {
+        reqOpts = {
+            TIMEOUT: 500
         };
     }
 
-    opts.url = url;
-    opts.method = method;
-    wrapRequest(deferred, opts);
+    reqOpts.url = url;
+    reqOpts.method = method;
+    wrapRequest(deferred, reqOpts);
     return deferred.promise;
 }
 
-function Fetcher(opts) {
-    this.opts = opts || {};
-    if (!this.opts.MAX_RETRIES) {
-        this.opts.MAX_RETRIES = 3;
-    }
-    if (!this.opts.TIMEOUT) {
-        this.opts.TIMEOUT = 100;
+function Fetcher(reqOpts) {
+    this.reqOpts = reqOpts || {};
+    if (!this.reqOpts.TIMEOUT) {
+        this.reqOpts.TIMEOUT = 100;
     }
 }
 
@@ -68,7 +65,7 @@ function fetchTrailer(params) {
     var token = params.opts.token;
     var url = buildURL(trailerAddictUrl, imdbId, token);
     var deferred = $q.defer();
-    get(url)
+    get(url, params.reqOpts)
         .then(function(taResp) {
             logger.debug('Processing Trailer Addict Frame response');
             parser.parseString(taResp.body, function(err, result) {
@@ -91,7 +88,8 @@ function fetchTrailer(params) {
 Fetcher.prototype = {
     fetch: function(filmId, opts) {
         var viaUrl = opts.viaUrl + filmId;
-        return get(viaUrl)
+        var reqOpts = this.reqOpts;
+        return get(viaUrl, reqOpts)
             .then(function(viaPlayResponse) {
                 logger.debug('Processing VIA Content response');
                 var data = JSON.parse(viaPlayResponse.body);
@@ -102,7 +100,8 @@ Fetcher.prototype = {
                         title: data.title,
                         description: data.description,
                     },
-                    opts: opts
+                    opts: opts,
+                    reqOpts: reqOpts
                 };
             })
             .then(fetchTrailer);
@@ -143,5 +142,5 @@ function processServerResponse(serverResp) {
 }
 
 module.exports = new Fetcher({
-    TIMEOUT: 100
+    TIMEOUT: 500
 });
