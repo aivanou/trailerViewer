@@ -1,10 +1,10 @@
 'use strict';
 
-var config = require('config');
-var logger = require('../common/logger');
-var api = require('express').Router();
-var trailerCache = require('../lib/cache');
-var trailerFetcher = require('../lib/core');
+var config = require('config'),
+    logger = require('../common/logger'),
+    api = require('express').Router(),
+    trailerCache = require('../lib/cache'),
+    trailerFetcher = require('../lib/core');
 
 api.get('/:filmId', function(req, res) {
     logger.debug('Processing request with parameter: ' + req.params.filmId);

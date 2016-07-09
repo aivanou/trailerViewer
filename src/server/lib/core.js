@@ -60,7 +60,7 @@ function Fetcher(reqOpts) {
 }
 
 function fetchTrailer(params) {
-    var imdbId = params.imdb.id.substring(2);
+    var imdbId = params.imdb.id;
     var trailerAddictUrl = params.opts.traileAddictUrl;
     var token = params.opts.token;
     var url = buildURL(trailerAddictUrl, imdbId, token);
@@ -69,11 +69,17 @@ function fetchTrailer(params) {
         .then(function(taResp) {
             logger.debug('Processing Trailer Addict Frame response');
             parser.parseString(taResp.body, function(err, result) {
-                var frame = getFrame(result);
+                var frameSource = 'http://v.traileraddict.com/';
+                var trailerId = getTrailerId(result);
+                if (trailerId === undefined) {
+                    frameSource = undefined;
+                } else {
+                    frameSource += trailerId;
+                }
                 deferred.resolve({
                     imdb: params.imdb,
                     metadata: params.metadata,
-                    trailerFrame: frame
+                    trailerUrl: frameSource
                 });
 
             });
@@ -108,12 +114,12 @@ Fetcher.prototype = {
     }
 };
 
-function getFrame(data) {
+function getTrailerId(data) {
     var trailers = data.trailers;
     if (trailers === undefined || trailers.trailer === undefined || trailers.trailer.length === 0) {
         return undefined;
     }
-    return trailers.trailer[0].embed[0];
+    return trailers.trailer[0].trailer_id;
 }
 
 function buildURL(str, imdb, token) {
@@ -128,6 +134,7 @@ function buildURL(str, imdb, token) {
 
 function retrieveIMDB(data) {
     var imdbId = data._embedded['viaplay:blocks'][0]._embedded['viaplay:product'].content.imdb;
+    imdbId.id = imdbId.id.substring(2);
     return imdbId;
 }
 

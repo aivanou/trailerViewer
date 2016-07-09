@@ -18,7 +18,7 @@ describe("Internal Fetcher tests", function() {
         result.then(function(data) {
             data.should.have.property('imdb');
             data.should.have.property('metadata');
-            data.should.have.property('trailerFrame');
+            data.should.have.property('trailerUrl');
             done();
         }, function(error) {
             assert.fail(error);
@@ -36,7 +36,7 @@ describe("Internal Fetcher tests", function() {
         result.then(function(data) {
             data.should.have.property('imdb');
             data.should.have.property('metadata');
-            data.should.have.property('trailerFrame');
+            data.should.have.property('trailerUrl');
             done();
         }, function(error) {
             assert.fail(error);
