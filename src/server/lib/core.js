@@ -99,16 +99,10 @@ Fetcher.prototype = {
             .then(function(viaPlayResponse) {
                 logger.debug('Processing VIA Content response');
                 var data = JSON.parse(viaPlayResponse.body);
-                var imdb = retrieveIMDB(data);
-                return {
-                    imdb: imdb,
-                    metadata: {
-                        title: data.title,
-                        description: data.description,
-                    },
-                    opts: opts,
-                    reqOpts: reqOpts
-                };
+                var result = retrieveFilmMetadata(data);
+                result.opts = opts;
+                result.reqOpts = reqOpts;
+                return result;
             })
             .then(fetchTrailer);
     }
@@ -132,10 +126,19 @@ function buildURL(str, imdb, token) {
     return str;
 }
 
-function retrieveIMDB(data) {
-    var imdbId = data._embedded['viaplay:blocks'][0]._embedded['viaplay:product'].content.imdb;
-    imdbId.id = imdbId.id.substring(2);
-    return imdbId;
+function retrieveFilmMetadata(data) {
+    var content = data._embedded['viaplay:blocks'][0]._embedded['viaplay:product'].content;
+    var imdb = content.imdb;
+    var title = content.title;
+    var synopsis = content.synopsis;
+    imdb.id = imdb.id.substring(2);
+    return {
+        imdb: imdb,
+        metadata: {
+            title: title,
+            description: synopsis
+        }
+    };
 }
 
 function buildUrl(protocol, host, url) {

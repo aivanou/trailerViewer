@@ -32,7 +32,7 @@ api.get('/:filmId', function(req, res) {
                     trailerCache.insert(req.params.filmId, data);
                 })
                 .fail(function(fail) {
-                    logger.error('Error: ' + fail);
+                    logger.error('Error: ' + JSON.stringify(fail));
                     res.status(500).send('No such movie');
                 });
         });

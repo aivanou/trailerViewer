@@ -21,8 +21,14 @@
                     <%}%>
                 </div>
                 <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
-                    <p>Title:  </p><p><%= data.metadata.title %></p>
-                    <p>Description:  </p><p><%= data.metadata.description %></p>
+                    <div class="text-primary">
+                        <h3>Title: <%= data.metadata.title %></h3>
+                    </div>
+                    <p>Description:  </p>
+                    <small>
+                    <%= data.metadata.description %>
+                    </small>
+                    <p>Rating: </p><%= data.imdb.rating%> from <%= data.imdb.votes %> viewers
                 </div>
             </div>
         </div>
