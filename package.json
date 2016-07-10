@@ -1,7 +1,7 @@
 {
     "name": "trailerViewer",
     "version": "1.0.0",
-    "main": "test.js",
+    "main": "src/server/server.js",
     "dependencies": {
         "chai": "^3.5.0",
         "collections": "^3.0.0",
@@ -18,11 +18,9 @@
         "supertest": "^1.2.0",
         "should": "^9.0.2",
         "grunt-contrib-jshint": ">0.10.0",
-        "grunt-contrib-nodeunit": ">=0.4.1",
+        "grunt-contrib-nodeunit": ">=0.4.1"
     },
     "devDependencies": {
-        "babel-core": "^6.10.4",
-        "babel-plugin-transform-react-jsx": "^6.8.0",
         "grunt-contrib-jshint": "^1.0.0",
         "grunt-contrib-qunit": "^1.2.0",
         "grunt-contrib-watch": "^1.0.0",
