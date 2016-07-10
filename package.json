@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "main": "src/server/server.js",
     "dependencies": {
-        "chai": "^3.5.0",
         "collections": "^3.0.0",
         "mocha": "^1.20.0",
         "config": "^1.21.0",
@@ -16,9 +15,7 @@
         "xml2js": "^0.4.17",
         "winston": "^2.2.0",
         "supertest": "^1.2.0",
-        "should": "^9.0.2",
-        "grunt-contrib-jshint": ">0.10.0",
-        "grunt-contrib-nodeunit": ">=0.4.1"
+        "should": "^9.0.2"
     },
     "devDependencies": {
         "grunt-contrib-jshint": "^1.0.0",
