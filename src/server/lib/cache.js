@@ -42,7 +42,7 @@ Cache.prototype = {
         } else if (this.opts.timeout) {
             var pastTime = (Date.now() - result.timestamp) / 1000 | 0;
             logger.debug('CACHE: checking: ' + key + ', time in cache: ' + pastTime + '  ' + this.opts.timeout);
-            if (this.opts.timeout > pastTime || this.cache.length >= this.opts.size) {
+            if (this.opts.timeout < pastTime || this.cache.length >= this.opts.size) {
                 this.cache.delete(key);
                 deferred.reject({
                     status: 'time expired, or cache too big',
