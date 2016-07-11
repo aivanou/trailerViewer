@@ -145,12 +145,6 @@ function buildUrl(protocol, host, url) {
     return protocol + '://' + host + url;
 }
 
-function processServerResponse(serverResp) {
-    var body = JSON.parse(serverResp.body);
-    delete body.secret;
-    return JSON.stringify(body);
-}
-
 module.exports = new Fetcher({
     TIMEOUT: 500
 });
