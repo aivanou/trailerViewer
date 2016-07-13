@@ -18,8 +18,8 @@ describe("Internal Cache testing", function() {
         });
     });
     it('should fail if the value is not in cache', function(done) {
-        var key = 'key';
-        var value = 'value';
+        var key = 'key1';
+        var value = 'value1';
         var result = cache.retrieve(key, value);
         result
             .then(function(data) {
