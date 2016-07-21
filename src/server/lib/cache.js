@@ -19,14 +19,21 @@ Cache.prototype = {
     insert: function(key, data) {
         logger.debug('CACHE: inserting into cache: ' + key + '  ' + data);
         var deferred = $q.defer();
-        this.cache.add({
-            data: data,
-            timestamp: Date.now()
-        }, key);
-        deferred.resolve({
-            status: 'success',
-            code: 200
-        });
+        if (this.cache.length >= this.opts.size) {
+            deferred.resolve({
+                status: 'cache is full',
+                code: 400
+            });
+        } else {
+            this.cache.add({
+                data: data,
+                timestamp: Date.now()
+            }, key);
+            deferred.resolve({
+                status: 'success',
+                code: 200
+            });
+        }
         return deferred.promise;
     },
 
